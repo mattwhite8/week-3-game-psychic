@@ -21,19 +21,24 @@ document.onkeyup = function(event) {
 	if (keystroke === newCpuGuess) {
 		wins++;
 		newCpuGuess = cpuGuess();
+		guessesLeft = 10;
+		alert("You got it!");
+		document.getElementById("yourGuesses").textContent = "";
 	} else {
-		losses++;
 		guessesLeft--;
+		document.getElementById("yourGuesses").textContent += keystroke + " ";
 	}
 
 	document.getElementById("wins").innerHTML = wins;
-	document.getElementById("losses").innerHTML = losses;
 	document.getElementById("guesses").innerHTML = guessesLeft;
-	document.getElementById("yourGuesses").textContent += keystroke + " ";
 
 	if (guessesLeft === 0) {
-		alert("You lost the game!");
-		location.reload();
+		alert("You lost the game! The answer was " + keystroke);
+		losses++;
+		guessesLeft = 10;
+		document.getElementById("yourGuesses").textContent = "";
 	}
+
+	document.getElementById("losses").innerHTML = losses;
 
 }
