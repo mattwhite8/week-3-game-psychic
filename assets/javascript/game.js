@@ -10,13 +10,15 @@ function cpuGuess() {
 }
 
 var newCpuGuess = cpuGuess();
-
+console.log("I set the cpuGuess as \n" + newCpuGuess);
 
 document.onkeyup = function(event) {
 	
 	console.log(newCpuGuess);
 
 	var keystroke = event.key.toLowerCase();
+	console.log("I pressed" + keystroke);
+	console.log("The computer guessed\n" + newCpuGuess);
 
 	if (keystroke === newCpuGuess) {
 		wins++;
@@ -33,7 +35,7 @@ document.onkeyup = function(event) {
 	document.getElementById("guesses").innerHTML = guessesLeft;
 
 	if (guessesLeft === 0) {
-		alert("You lost the game! The answer was " + keystroke);
+		alert("You lost the game! The answer was " + newCpuGuess);
 		losses++;
 		newCpuGuess = cpuGuess();
 		guessesLeft = 10;
