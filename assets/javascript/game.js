@@ -35,6 +35,7 @@ document.onkeyup = function(event) {
 	if (guessesLeft === 0) {
 		alert("You lost the game! The answer was " + keystroke);
 		losses++;
+		newCpuGuess = cpuGuess();
 		guessesLeft = 10;
 		document.getElementById("yourGuesses").textContent = "";
 	}
