@@ -3,7 +3,7 @@ var losses = 0;
 var guessesLeft = 10;
 
 var cpu = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
-			,"p","q","r","s","t","u","v","w","x","y","z"];
+	,"p","q","r","s","t","u","v","w","x","y","z"];
 
 function cpuGuess() {
 	return cpu[Math.floor(Math.random() * cpu.length)];
@@ -44,4 +44,4 @@ document.onkeyup = function(event) {
 
 	document.getElementById("losses").innerHTML = losses;
 
-}
+};
